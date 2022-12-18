@@ -49,3 +49,10 @@ Question 7: How many customers ordered more than 2 products at a time in Februar
     LEFT JOIN BIT_DB.customers
     ON FebSales.orderID=customers.order_id
     WHERE FebSales.Quantity>2 ; 
+
+Question 8: List all the products sold in Los Angeles in February, and include how many of each were sold.
+  SELECT Product, sum(quantity)
+    FROM BIT_DB.FebSales
+    WHERE location like '%Los Angeles%' 
+    GROUP BY Product ; 
+    **** For this quesiton I noticed I have the tendancy to forget the add a GROUP BY function for most queries.
