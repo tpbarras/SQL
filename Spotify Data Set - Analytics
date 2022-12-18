@@ -1,0 +1,47 @@
+# For this project, I had downloaded an excel spreadsheet containing the top artists of 2015 and created a table.
+
+  CREATE TABLE BIT_DB.SpotifyData (
+  id INTEGER PRIMARY KEY
+  artist_name TEXT NOT NULL
+  track_name TEXT NOT NULL 
+  track_id TEXT NOT NULL
+  popularity INTEGER NOT NULL
+  danceability NUMERIC NOT NULL
+  energy NUMERIC NOT NULL
+  song_key INTEGER NOT NULL 
+  loudness NUMERIC NOT NULL
+  song_mode INTEGER NOT NULL
+  speechiness NUMERIC NOT NULL
+  acousticness NUMERIC NOT NULL
+  instrumentalness TEXT NOT NULL
+  liveness NUMERIC NOT NULL
+  valence NUMERIC NOT NULL
+  tempo NUMERIC NOT NULL
+  duration_ms INTEGER NOT NULL
+  time_signature INTEGER NOT NULL) ; 
+  
+# From here I inserted the csv file into the table, allowing me to explore the data.
+
+# First, I wanted to find which tracks had the highest popularity and narrowed down to the top 5. 
+  SELECT artist_name, track_name, popularity
+    FROM BIT_DB.SpotifyData
+    GROUP BY track_name
+    ORDER BY popularity desc 
+    limit 5 ;
+    
+# Then, I wanted to see the average of danceability and energy in these top songs to potentially see any influence 
+# Found that the averages were not too high and showed me that a good portion are relatively danceable and energetic with some being on the lower side. 
+
+  SELECT avg(danceability), 
+  avg(energy)
+    FROM BIT_DB.SpotifyData ;
+
+# I then got curious and wanted to see what the energy and speechiness of the tracks looked like as well. 
+# From there it didn't look like there was much of a correlation between speechiness and energy contributing to the popularity of the songs. So I quickly disregarded it.
+  SELECT track_name, 
+popularity, 
+energy, 
+speechiness
+    FROM BIT_DB.SpotifyData
+    ORDER BY popularity; 
+
