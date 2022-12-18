@@ -56,3 +56,45 @@ Question 8: List all the products sold in Los Angeles in February, and include h
     WHERE location like '%Los Angeles%' 
     GROUP BY Product ; 
     **** For this quesiton I noticed I have the tendancy to forget the add a GROUP BY function for most queries.
+
+SECOND SET OF QUESTIONS 
+  
+
+Question 1: Which Locations in New York received at least 3 orders in January, and how many orders did they each receive?
+  SELECT location, sum(quantity)
+    FROM BIT_DB.JanSales 
+    Where location like '%NY%' 
+    GROUP BY Product; 
+
+Question 2: How many of each type of headphone were sold in February?
+  SELECT Product, count(quantity)
+    FROM BIT_DB.FebSales
+    WHERE Product like '%Headphones' 
+    GROUP BY Product ; 
+
+Question 3: What was the average amount spent per account in Febrary?
+  SELECT avg(quantity*price)
+    FROM BIT_DB.FebSales
+    LEFT JOIN BIT_DB.customers
+    ON FebSales.orderID=Customers.order_id ;
+
+Question 4: What was the average quantity of products purchased per account in February? 
+  (INITIAL QUERY)
+  SELECT avg(quantity)
+    FROM BIT_DB.FebSales
+    LEFT JOIN BIT_DB.customers
+    ON FebSales.orderID=Customers.order_id ;
+  
+  (CORRECT QUERY)
+  SELECT sum(quantity)/count(customers.acctnum)
+    FROM BIT_DB.FebSales
+    LEFT JOIN BIT_DB.customers
+    ON FebSales.orderID=Customers.order_id;
+  **** The answer for mine comes up as roughly 1.066007 , and the one for the correct ver. comes up as roughly 1.068512, however I do understand why it is only half correct.
+
+Question 5: Which product brought in the most revenue in January and how much revenue did it bring in total?
+  SELECT Product, sum(quantity*price) as rev
+    FROM BIT_DB.JanSales
+    GROUP BY Product 
+    ORDER BY rev desc 
+    limit 1;
