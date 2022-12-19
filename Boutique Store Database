@@ -1,0 +1,31 @@
+/** Boutique Items: 
+Blouse (34)
+Jeans (55)
+Skirt (22)
+T-Shirt (13)
+Leggings (10)
+Lingerie (43)
+Heels (70)
+Sneakers (60)
+**/ 
+
+CREATE TABLE boutique_items (id INTEGER PRIMARY KEY, items TEXT, price INTEGER, purchased INTEGER, rating INTEGER);
+INSERT INTO boutique_items VALUES(1, "Blouse", 34, 16, 3.5);
+INSERT INTO boutique_items VALUES(2, "Jeans", 55, 25, 4.5);
+INSERT INTO boutique_items VALUES(3, "Skirt", 22, 8, 2.5);
+INSERT INTO boutique_items VALUES(4, "T-Shirt", 13, 8, 2.5);
+INSERT INTO boutique_items VALUES(5, "Leggings", 10, 6, 2.5);
+INSERT INTO boutique_items VALUES(6, "Lingerie", 43, 8, 2.5);
+INSERT INTO boutique_items VALUES(7, "Heels", 70, 8, 2.5);
+INSERT INTO boutique_items VALUES(8, "Sneakers", 60, 7, 2.5);
+
+SELECT * FROM boutique_items ORDER BY price;
+
+SELECT SUM(purchased) FROM boutique_items;
+
+SELECT avg(price*purchased) as avg_rev,
+items
+FROM boutique_items 
+GROUP BY items; 
+
+SELECT avg(rating) FROM boutique_items;
