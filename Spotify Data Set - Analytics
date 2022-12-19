@@ -45,3 +45,23 @@ speechiness
     FROM BIT_DB.SpotifyData
     ORDER BY popularity; 
 
+
+# Inserting question to demonstrate first time using CTE. 
+# Calculate the average popularity for the artists in the Spotify data table. 
+# Then, for every artist with an average popularity of 90 or above, show their name, their average popularity, and label them as a “Top Star”.
+
+WITH tempTable AS (
+    SELECT 
+    artist_name, 
+    avg(popularity) as avg_popularity
+    FROM SpotifyData
+    GROUP BY artist_name)
+    SELECT avg_popularity, artist_name, 
+        CASE
+            WHEN avg_popularity>90 THEN 'Top Star'
+            ELSE 'NULL'
+        END AS 'status'
+    FROM tempTable 
+    WHERE avg_popularity>90 ; 
+# This question took me quite some time to figure out up until I remembered I could use CASE. 
+# After trial and error I was finally able to reach what I was looking for.
