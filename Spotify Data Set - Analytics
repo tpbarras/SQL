@@ -58,10 +58,10 @@ WITH tempTable AS (
     GROUP BY artist_name)
     SELECT avg_popularity, artist_name, 
         CASE
-            WHEN avg_popularity>90 THEN 'Top Star'
+            WHEN avg_popularity>=90 THEN 'Top Star'
             ELSE 'NULL'
         END AS 'status'
     FROM tempTable 
-    WHERE avg_popularity>90 ; 
+    WHERE avg_popularity>=90 ; 
 # This question took me quite some time to figure out up until I remembered I could use CASE. 
 # After trial and error I was finally able to reach what I was looking for.
