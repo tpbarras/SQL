@@ -5,11 +5,9 @@ Question 1: How many movie titles are there in the database? (movies only, not t
     FROM "CharlotteChaze/BreakIntoTech"."netflix_people"
     LEFT JOIN "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
     ON "netflix_people"."show_id"="netflix_titles_info"."show_id" ; 
-    Answer: 
     
 Question 2: When was the most recent batch of tv shows and/or movies added to the database?
   SELECT count("title") FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info";
-  Answer: 
 
 Question 3: List all movies and tv shows in alphabetical order.
   SELECT "title" FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
