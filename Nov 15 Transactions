@@ -1,0 +1,88 @@
+/* Put your data in here and query it! */
+
+CREATE TABLE Nov_15_Trans (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    Trans_Type      TEXT,
+    Amount          INTEGER,
+    Given_or_Received      TEXT,
+    Fee             Integer
+    );
+
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Deposit", 100.00, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Deposit", 366.37, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Deposit", 261.38, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Deposit", 233.42, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Deposit", 786.77, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("CashPay", 600.00, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("CashPay", 300.00, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("CashPay", 10.00, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Cash_Advance", 2553.60, "Cashier's Check", 10.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("CashPay", 1991.49, "Transfer", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Deposit", 307.19, "Check(s)",0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("CashPay", 68.06, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Deposit", 352.97, "Cash & Check(s)", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Deposit", 943.42, "Cash & Check(s)", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("CashPay", 158.16, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Deposit", 152.99, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("CashPay", 400.00, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("CashPay", 200.00, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("CashPay", 100.00, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Deposit", 170.10, "Check(s)", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Deposit", 689.66, "Check(s)", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Deposit", 1923.91, "Check(s)", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Deposit", 1000.83, "Check(s)", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Deposit", 520.64, "Check(s)", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("CashPay", 1625.17, "Check(s)", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("CashPay", 1000.00, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("CashPay", 1900.00, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Buy", 100.00, "TELLER", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Deposit", 20000.00, "Check(s)", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("CashPay", 300.00, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Deposit", 5000.00, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Deposit", 14294.90, "Check(s)", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("CashPay", 520.00, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Payment", 900.00, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("CashPay", 1100.00, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("CashPay", 3400.00, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Deposit", 693.65, "Check(s)", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Deposit", 3980.00, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("CashPay", 200.00, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Deposit", 747.77, "Check(s)", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Payment", 4500.00, "Check(s)", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Payment", 5000.00, "Check(s)", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Deposit", 330.00, "Cash", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Buy", 11590.00, "TELLER", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("BUY", 0.82, "TELLER", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("CashPay", 2240.00, "Money Order", 5.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("Deposit", 400.00, "Check(s)", 0.00);
+INSERT INTO Nov_15_Trans (Trans_type, Amount, Given_or_Received, Fee) VALUES ("CashPay", 600.00, "Cash", 0.00);
+
+SELECT * from Nov_15_Trans;
+
+SELECT * from Nov_15_Trans WHERE Amount > 1000.00 OR Fee = 10.00; 
+SELECT * from Nov_15_Trans WHERE Amount > 1000.00 AND Fee = 10.00;
+
+SELECT *, SUM(Fee) AS Total_Fees FROM Nov_15_Trans; 
+
+SELECT Trans_Type, AVG(Amount) AS Avg_Money_Movement FROM Nov_15_trans
+    GROUP BY Trans_Type
+    HAVING AVG_Money_Movement > 500.00; 
+
+/* Case */ 
+SELECT COUNT (*),
+    CASE
+        WHEN Fee = 5.00 THEN "Money Order"
+        WHEN Fee = 10.00 THEN "Cashier's Check"
+        ELSE "Non-Consequential"
+        END as "Fee_Type"
+FROM Nov_15_Trans
+GROUP BY Fee_Type; 
+
+/* Case */ 
+SELECT COUNT (*),
+    CASE
+        WHEN Amount > 10000.00 THEN "Possible CTR"
+        ELSE "Non-Consequential"
+        END as "Movement_Result"
+FROM Nov_15_Trans 
+GROUP BY Movement_Result; 
