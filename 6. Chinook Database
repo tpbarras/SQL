@@ -1,0 +1,95 @@
+# Wanted to see how many invoices were made in the year 2013.
+
+select count(InvoiceDate) as '2013_invoices' 
+from invoices 
+where InvoiceDate like '%2013%';
+
+# Wanted to see which customers were from Germany
+
+select customerID,
+FirstName,
+LastName,
+Email,
+country 
+from customers
+where country like '%Germany%' ; 
+
+# Realistically just wanted to see what this would look like, but would definitely narrow down to relevent data once looking back
+
+select *
+from customers 
+inner join employees
+on customers.SupportRepId=employees.EmployeeId ; 
+
+# Wanted to set up all the invoices with dates with employee name/id's
+# Initially was only going to do the total count of invoices between employees, but wanted to see the dates as well.
+
+select employees.EmployeeId, 
+employees.FirstName,
+employees.LastName,
+invoices.InvoiceId,
+invoices.InvoiceDate
+from employees
+left join customers
+on employees.EmployeeId=customers.SupportRepId
+left join invoices
+on customers.CustomerID=invoices.CustomerId
+where invoices.InvoiceId IS NOT NULL
+group by employees.EmployeeId; 
+
+#Narrowed down invoices made in 2010 with the email, billing city, and country of customers. 
+
+select invoices.InvoiceDate, 
+invoices.BillingCity,
+customers.country, 
+customers.Email
+from invoices 
+left join customers
+on invoices.CustomerId=customers.CustomerId 
+where customers.country like '%France%' and invoices.InvoiceDate like '%2010%'; 
+
+# Wanted to see how many items per invoice id were sold and how much was made from there.
+# Also wanted to display the tracks alongside to show which went with the invoices. 
+# Looking back, it may have been a better idea to narrow down by album, but was satisfied with results
+
+select invoice_items.InvoiceId,
+count(invoice_items.Quantity) AS 'TOTAL_SOLD',
+sum(invoice_items.UnitPrice*invoice_items.Quantity) as 'REVENUE', 
+tracks.Name 
+from tracks
+left join invoice_items 
+on tracks.TrackId=invoice_items.TrackId
+where 'TOTAL_SOLD' IS NOT NULL
+and invoice_items.InvoiceId IS NOT NULL 
+group by invoice_items.InvoiceId ;
+
+# Narrowed down which employees were sales agents
+
+select EmployeeId, 
+FirstName, 
+LastName,
+Country,
+Title 
+from employees
+where Title like '%Agent%' ; 
+
+# Wanted to see unique billing country and billing addresses from the invoice table
+
+select distinct invoices.BillingCountry, 
+invoices.BillingAddress
+from invoices ; 
+
+# Wanted to see the names of the sales agents along with the total from the invoices table displayed next to their name.
+# Mostly to practice multiple joins, and I wanted to see what data came up from the total gathered from customers.
+
+select employees.FirstName, 
+employees.LastName,
+invoices.Total
+from employees
+left join customers 
+on employees.EmployeeId=customers.SupportRepId
+left join invoices 
+on customers.CustomerId=invoices.CustomerId
+where invoices.Total IS NOT NULL
+group by employees.EmployeeId ; 
+
